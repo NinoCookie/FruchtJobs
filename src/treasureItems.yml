@@ -1,0 +1,49 @@
+TreasureItems:
+  1:
+    rarity: legendary
+    chance: 100.0
+    items:
+      1:
+        displayname: Goldig
+        name: gold_block
+        lore:
+          - Test
+          - Haha
+        enchants:
+          - luck-1
+        amount: 1
+        chance: 100.0
+      2:
+        displayname: Grass
+        name: grass_block
+        lore:
+          - Testo
+          - Hahao
+        enchants:
+          - luck-3
+        amount: 2
+        chance: 100.0
+  2:
+    rarity: common
+    chance: 100.0
+    items:
+      1:
+        displayname: Goldig
+        name: gold_block
+        lore:
+          - Test
+          - Haha
+        enchants:
+          - luck-1
+        amount: 1
+        chance: 100.0
+      2:
+        displayname: Grass
+        name: grass_block
+        lore:
+          - Testo
+          - Hahao
+        enchants:
+          - luck-3
+        amount: 2
+        chance: 100.0

@@ -1,0 +1,29 @@
+Bounty:
+  1:
+    number: 1
+    name: "Casual Treasure"
+    guiicon: dirt_block
+    permission: "none"
+    level: 5
+    chance: 5.0
+    stats: true
+    treasure: true
+    rarity: common
+    commands:
+      - ""
+    cash: 50
+    cashchance: 10
+  2:
+    number: 2
+    name: "A Nice Treasure"
+    guiicon: gold_block
+    permission: "none"
+    level: 50
+    chance: 0.25
+    stats: true
+    treasure: true
+    rarity: legendary
+    commands:
+      - ""
+    cash: 1000
+    cashchance: 10

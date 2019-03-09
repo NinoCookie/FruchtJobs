@@ -1,0 +1,15 @@
+#Here are all Abilities listed, with minimal changing values (more to come)
+Treefeller:
+  abilityname: "Treefeller"
+  jobs:
+    - Holzfäller
+  #the store where u get it, will grant u the permission anyways.
+  permission: "treefeller.use"
+  level: 10
+  cost: 1000
+BlockBreaker:
+  abilityname: "blockbreaker"
+  jobs:
+    - Bergarbeiter
+  permission: "blockbreaker.use"
+  cost: 10

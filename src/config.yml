@@ -1,0 +1,27 @@
+# Welcome to the configuration Section of my Plugin ...........................................................................-
+# My name is Nino, a new Plugin-developer on Spigot ...........................................................................-
+# I made some little plugins before, which were not even close to a plugin like this ..........................................-
+# Enjoy using it! Thanks for using it! Give me some comments in spigot, give me tips, wishes and whatever and so on and yeah ..-
+# MySQL is required at the moment, I am going to add SQLite soon! .............................................................-
+Database:
+  name: minecraft
+  host: localhost
+  username: root
+  password: root
+  port: 3306
+Messages:
+  lvlup: "%job% >> %joblevel%"
+  join: "Du bist %job% gejoint"
+  leave: "Du hast %job% verlassen"
+  noexistent: "Den JobsJob, %job% gibt es nicht!"
+  nojob: "Du hast keinen job"
+  hasjob: "Du hast den Job %job% schon!"
+  hasnotjob: "Du hast den Job %job% nicht!"
+  noperm: "Du hast dazu keine Berechtigung"
+  missingpara: "Da fehlt ein Parameter!"
+  bountyachieve: "Du hast %bounty% bekommen!"
+Events:
+  multiplier: 1.0
+  protectiontime: 360s
+  checkforprotectiontime: 60
+  minimumdmg: 50.0

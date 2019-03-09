@@ -1,0 +1,12 @@
+name: Jobs
+author: Ninoo
+version: 1.0
+api-version: 1.13
+main: ninoo_jobs.jobs_Main.JobsMain
+commands:
+  jobs:
+    description:
+    aliases: [job,jobs,arbeit]
+  bounty:
+    description:
+    aliases: [schatz,bounty]

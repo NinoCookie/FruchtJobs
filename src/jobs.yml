@@ -1,0 +1,17 @@
+Jobs:
+  Woodcutter:
+    name: Holzfäller
+    color: GREEN
+    maxlevel: 100
+    guilore:
+      - er axtet Holz
+    guititle: Holzfäller
+    guiicon: wood_axe
+    trigger:
+      1:
+        name: oak_log
+        xp: 12.5
+        entity: "block"
+        bounties:
+          - 1
+          - 2

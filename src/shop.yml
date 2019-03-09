@@ -1,0 +1,5 @@
+Shop:
+  1:
+    entity: "job"
+    jobname: "Holzfäller"
+    price: 100
