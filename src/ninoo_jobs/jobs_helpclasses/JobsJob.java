@@ -15,6 +15,7 @@ public class JobsJob
     public String GUITitle;
     public String GUIIcon;
     public List<JobsTrigger> Triggers;
+    public String Permission;
 
     public JobsJob(ConfigurationSection section)
     {
@@ -26,6 +27,7 @@ public class JobsJob
         GUITitle    = section.getString("guititle");
         GUIIcon     = section.getString("guiicon");
         Triggers    = JobsTrigger.FromSection(section.getConfigurationSection("trigger"));
+        Permission  = section.getString("permission");
     }
 
     public static List<JobsJob> FromSection(ConfigurationSection section)

@@ -25,9 +25,9 @@ public class JobsShop implements Listener {
                             if(JobsMain.shopsList.get(j).Jobname.equalsIgnoreCase(JobsMain.jobslist.get(i).Name)){
                                 Player player= (Player) event.getWhoClicked();
                                 if(JobsMain.economy.has(player, Integer.parseInt(lores.get(0)))){
-                                    JobsMain.economy.withdrawPlayer(player, Integer.parseInt(lores.get(0)));
                                     if(player.hasPermission("JobsShop.use")){
-
+                                        JobsMain.economy.withdrawPlayer(player, Integer.parseInt(lores.get(0)));
+                                        JobsMain.permission.playerAdd(player, JobsMain.jobslist.get(i).Permission);
                                     }
                                 }
                             }

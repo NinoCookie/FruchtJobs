@@ -163,8 +163,7 @@ public class JobsMain extends JavaPlugin {
         return true;
     }
 
-    private boolean setupPermissions()
-    {
+    private boolean setupPermissions(){
         RegisteredServiceProvider<Permission> permissionProvider = getServer().getServicesManager().getRegistration(net.milkbowl.vault.permission.Permission.class);
         if (permissionProvider != null) {
             permission = permissionProvider.getProvider();
