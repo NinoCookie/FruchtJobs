@@ -1,8 +1,7 @@
 package ninoo_jobs.jobs_Main;
 
-import net.milkbowl.vault.VaultEco;
-import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
+import net.milkbowl.vault.permission.Permission;
 import ninoo_jobs.jobs_cmds.JobsBountyCommand;
 import ninoo_jobs.jobs_cmds.JobsCommand;
 import ninoo_jobs.jobs_db.JobsDBManager;
@@ -10,13 +9,11 @@ import ninoo_jobs.jobs_helpclasses.*;
 import ninoo_jobs.jobs_helpclasses.JobsShop;
 import ninoo_jobs.jobs_listeners.*;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
-import org.bukkit.util.Consumer;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -37,6 +34,7 @@ public class JobsMain extends JavaPlugin {
     private static JobsCFG jobsCFG_shop;
 
     public static Economy economy;
+    public static Permission permission = null;
 
     @Override
     public void onEnable() {
@@ -163,6 +161,15 @@ public class JobsMain extends JavaPlugin {
         }
         economy=rsp.getProvider();
         return true;
+    }
+
+    private boolean setupPermissions()
+    {
+        RegisteredServiceProvider<Permission> permissionProvider = getServer().getServicesManager().getRegistration(net.milkbowl.vault.permission.Permission.class);
+        if (permissionProvider != null) {
+            permission = permissionProvider.getProvider();
+        }
+        return (permission != null);
     }
 
     public static boolean lvlup(UUID uuid, String job, int maxlvl){

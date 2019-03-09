@@ -1,14 +1,10 @@
 package ninoo_jobs.jobs_listeners;
 
-
-import net.milkbowl.vault.Vault;
-import net.milkbowl.vault.economy.Economy;
 import ninoo_jobs.jobs_Main.JobsMain;
 import ninoo_jobs.jobs_cmds.JobsBountyCommand;
 import ninoo_jobs.jobs_helpclasses.JobsRItem;
 import ninoo_jobs.jobs_db.JobsDBManager;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

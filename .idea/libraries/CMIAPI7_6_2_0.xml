@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="CMIAPI7.6.2.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../CMIAPI7.6.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Vault.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../spigot-1.13.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../spigot-1.13.2.jar!/" />
+    </SOURCES>
+  </library>
+</component>
