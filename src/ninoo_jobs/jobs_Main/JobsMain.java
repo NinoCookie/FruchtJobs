@@ -2,12 +2,19 @@ package ninoo_jobs.jobs_Main;
 
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
-import ninoo_jobs.jobs_cmds.JobsBountyCommand;
+import ninoo_jobs.jobs_Main.fileHandler.JobsCFG;
+import ninoo_jobs.jobs_cmds.jobs_bounty_commands.JobsBountyCommand;
 import ninoo_jobs.jobs_cmds.JobsCommand;
 import ninoo_jobs.jobs_db.JobsDBManager;
-import ninoo_jobs.jobs_helpclasses.*;
-import ninoo_jobs.jobs_helpclasses.JobsShop;
-import ninoo_jobs.jobs_listeners.*;
+import ninoo_jobs.jobs_helpclasses.helpfulObjects.JobsRItem;
+import ninoo_jobs.jobs_helpclasses.sectionControllers.*;
+import ninoo_jobs.jobs_listeners.guis.JobsGuiBountyListener;
+import ninoo_jobs.jobs_listeners.guis.JobsGuiListener;
+import ninoo_jobs.jobs_listeners.protectionListener.JobsProtection;
+import ninoo_jobs.jobs_listeners.triggerListener.JobsBlockBreaker;
+import ninoo_jobs.jobs_listeners.triggerListener.JobsFishListener;
+import ninoo_jobs.jobs_listeners.triggerListener.JobsMobKillListener;
+import ninoo_jobs.jobs_listeners.triggerListener.JobsSheepListener;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.Plugin;
@@ -253,8 +260,6 @@ public class JobsMain extends JavaPlugin {
             }
         }
     }
-
-
 
     public static JobsCFG getJobsCfg_jobs() {
         return jobsCfg_jobs;

@@ -1,6 +1,7 @@
-package ninoo_jobs.jobs_listeners;
+package ninoo_jobs.jobs_listeners.guis;
 
 import ninoo_jobs.jobs_Main.JobsMain;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -28,6 +29,7 @@ public class JobsShop implements Listener {
                                     if(player.hasPermission("JobsShop.use")){
                                         JobsMain.economy.withdrawPlayer(player, Integer.parseInt(lores.get(0)));
                                         JobsMain.permission.playerAdd(player, JobsMain.jobslist.get(i).Permission);
+                                        Bukkit.getServer().dispatchCommand(player, "jobs join"+JobsMain.jobslist.get(i).Name);
                                     }
                                 }
                             }

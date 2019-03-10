@@ -1,10 +1,8 @@
-package ninoo_jobs.jobs_listeners;
+package ninoo_jobs.jobs_listeners.triggerListener;
 
 import ninoo_jobs.jobs_Main.JobsMain;
-import ninoo_jobs.jobs_helpclasses.JobsTrigger;
+import ninoo_jobs.jobs_helpclasses.sectionControllers.JobsTrigger;
 import ninoo_jobs.jobs_db.JobsDBManager;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

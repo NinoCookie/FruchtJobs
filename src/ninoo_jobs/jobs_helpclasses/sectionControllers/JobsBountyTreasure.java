@@ -1,6 +1,7 @@
-package ninoo_jobs.jobs_helpclasses;
+package ninoo_jobs.jobs_helpclasses.sectionControllers;
 
 import ninoo_jobs.jobs_Main.JobsMain;
+import ninoo_jobs.jobs_helpclasses.helpfulObjects.JobsRItem;
 
 import java.util.ArrayList;
 import java.util.List;

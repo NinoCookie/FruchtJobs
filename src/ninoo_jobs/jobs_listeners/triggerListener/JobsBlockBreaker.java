@@ -1,4 +1,4 @@
-package ninoo_jobs.jobs_listeners;
+package ninoo_jobs.jobs_listeners.triggerListener;
 
 import ninoo_jobs.jobs_Main.JobsMain;
 import ninoo_jobs.jobs_db.JobsDBManager;

@@ -1,4 +1,4 @@
-package ninoo_jobs.jobs_cmds;
+package ninoo_jobs.jobs_cmds.jobs_bounty_commands;
 
 import ninoo_jobs.jobs_Main.JobsMain;
 import ninoo_jobs.jobs_db.JobsDBManager;

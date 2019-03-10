@@ -1,9 +1,8 @@
-package ninoo_jobs.jobs_listeners;
+package ninoo_jobs.jobs_listeners.triggerListener;
 
 
-import net.minecraft.server.v1_13_R2.EntityPlayer;
 import ninoo_jobs.jobs_Main.JobsMain;
-import ninoo_jobs.jobs_helpclasses.JobsTrigger;
+import ninoo_jobs.jobs_helpclasses.sectionControllers.JobsTrigger;
 import ninoo_jobs.jobs_db.JobsDBManager;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
@@ -12,7 +11,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
-import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.plugin.Plugin;
 
 import java.util.*;

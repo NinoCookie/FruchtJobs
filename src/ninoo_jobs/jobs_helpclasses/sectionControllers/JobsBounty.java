@@ -1,12 +1,11 @@
-package ninoo_jobs.jobs_helpclasses;
+package ninoo_jobs.jobs_helpclasses.sectionControllers;
 
 import org.bukkit.configuration.ConfigurationSection;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class JobsBounty
-{
+public class JobsBounty {
     public int Number;
     public String Permission;
     public int Level;

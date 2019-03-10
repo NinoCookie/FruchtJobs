@@ -1,4 +1,4 @@
-package ninoo_jobs.jobs_helpclasses;
+package ninoo_jobs.jobs_helpclasses.sectionControllers;
 
 import org.bukkit.configuration.ConfigurationSection;
 

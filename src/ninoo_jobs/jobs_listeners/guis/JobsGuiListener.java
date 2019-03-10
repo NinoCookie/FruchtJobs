@@ -1,4 +1,4 @@
-package ninoo_jobs.jobs_listeners;
+package ninoo_jobs.jobs_listeners.guis;
 
 import net.md_5.bungee.api.ChatColor;
 import ninoo_jobs.jobs_Main.JobsMain;

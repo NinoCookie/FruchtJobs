@@ -1,8 +1,8 @@
-package ninoo_jobs.jobs_listeners;
+package ninoo_jobs.jobs_listeners.guis;
 
 import ninoo_jobs.jobs_Main.JobsMain;
-import ninoo_jobs.jobs_cmds.JobsBountyCommand;
-import ninoo_jobs.jobs_helpclasses.JobsRItem;
+import ninoo_jobs.jobs_cmds.jobs_bounty_commands.JobsBountyCommand;
+import ninoo_jobs.jobs_helpclasses.helpfulObjects.JobsRItem;
 import ninoo_jobs.jobs_db.JobsDBManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;

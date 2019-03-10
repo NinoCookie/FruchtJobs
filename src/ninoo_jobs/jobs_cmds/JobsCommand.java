@@ -123,13 +123,13 @@ public class JobsCommand implements CommandExecutor {
                     }
                 }
                 if (strings[0].equalsIgnoreCase("join")) {
-                    if (player.hasPermission("jobs.join")) {
-                        if (strings.length == 2) {
-                            String job = strings[1];
-                            boolean is=false;
-                            ChatColor color=ChatColor.GRAY;
-                            for (int i = 0; i < JobsMain.jobslist.size(); i++) {
-                                if (JobsMain.jobslist.get(i).Name.equalsIgnoreCase(job)) {
+                    if (strings.length == 2) {
+                        String job = strings[1];
+                        boolean is=false;
+                        ChatColor color=ChatColor.GRAY;
+                        for (int i = 0; i < JobsMain.jobslist.size(); i++) {
+                            if (JobsMain.jobslist.get(i).Name.equalsIgnoreCase(job)) {
+                                if(player.hasPermission(JobsMain.jobslist.get(i).Permission)){
                                     color=ChatColor.valueOf(JobsMain.jobslist.get(i).Color);
                                     JobsDBManager jobsDbManager = new JobsDBManager();
                                     jobsDbManager.setPlugin(plugin);
@@ -145,16 +145,17 @@ public class JobsCommand implements CommandExecutor {
                                     is=true;
                                     break;
                                 }
+                                else {
+                                    player.sendMessage(plugin.getConfig().getString("Messages.noperm"));
+                                }
                             }
                             if(!is){
                                 player.sendMessage(plugin.getConfig().getString("Messages.noexistent").replaceAll(Pattern.quote("%job%"), color+job+ChatColor.WHITE));
                             }
                         }
-                        else{
-                            player.sendMessage(plugin.getConfig().getString("Messages.missingpara"));
-                        }
-                    } else {
-                        player.sendMessage(plugin.getConfig().getString("Messages.noperm"));
+                    }
+                    else{
+                        player.sendMessage(plugin.getConfig().getString("Messages.missingpara"));
                     }
                 }
                 if (strings[0].equalsIgnoreCase("leave")) {
