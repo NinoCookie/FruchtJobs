@@ -3,8 +3,13 @@ package ninoo_jobs.jobs_Main;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 import ninoo_jobs.jobs_Main.fileHandler.JobsCFG;
+import ninoo_jobs.jobs_cmds.jobs_admin_commands.JobsGiveAdminCommand;
+import ninoo_jobs.jobs_cmds.jobs_admin_commands.JobsPermissionCommand;
+import ninoo_jobs.jobs_cmds.jobs_admin_commands.JobsReloadCommand;
+import ninoo_jobs.jobs_cmds.jobs_admin_commands.JobsRemoveAdminCommand;
 import ninoo_jobs.jobs_cmds.jobs_bounty_commands.JobsBountyCommand;
 import ninoo_jobs.jobs_cmds.JobsCommand;
+import ninoo_jobs.jobs_cmds.jobs_player_commands.*;
 import ninoo_jobs.jobs_db.JobsDBManager;
 import ninoo_jobs.jobs_helpclasses.helpfulObjects.JobsRItem;
 import ninoo_jobs.jobs_helpclasses.sectionControllers.*;
@@ -76,7 +81,7 @@ public class JobsMain extends JavaPlugin {
         jobsCommand.setPlugin(plugin);
         this.getCommand("jobs").setExecutor(jobsCommand);
 
-        JobsBountyCommand jobsBountyCommand =new JobsBountyCommand();
+        JobsBountyCommand jobsBountyCommand=new JobsBountyCommand();
         jobsBountyCommand.setPlugin(plugin);
         this.getCommand("bounty").setExecutor(jobsBountyCommand);
 

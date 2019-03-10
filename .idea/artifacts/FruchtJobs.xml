@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="FruchtJobs">
-    <output-path>$PROJECT_DIR$/out/artifacts/FruchtJobs</output-path>
+    <output-path>$PROJECT_DIR$/..</output-path>
     <root id="archive" name="FruchtJobs.jar">
       <element id="module-output" name="FruchtJobs" />
     </root>
