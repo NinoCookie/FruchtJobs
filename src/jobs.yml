@@ -1,7 +1,7 @@
 Jobs:
   Woodcutter:
     name: Holzfäller
-    permission: "Jobs.job.Holzfäller"
+    permission: "Jobs.jobs.Holzfäller"
     color: GREEN
     maxlevel: 100
     guilore:

@@ -8,6 +8,7 @@ import ninoo_jobs.jobs_cmds.jobs_admin_commands.JobsRemoveAdminCommand;
 import ninoo_jobs.jobs_cmds.jobs_player_commands.*;
 import ninoo_jobs.jobs_db.JobsDBManager;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -108,11 +109,36 @@ public class JobsCommand implements CommandExecutor {
                 }
             }
             else{
-                player.openInventory(getJobsInv(player, plugin));
+                //player.openInventory(getJobsInv(player, plugin));
+                player.openInventory(getMainJobsInv(player, plugin));
                 return true;
             }
         }
         return false;
+    }
+    public static Inventory getMainJobsInv(Player player, Plugin plugin){
+        Inventory inv=Bukkit.getServer().createInventory(player, 27, "FruchtJobs");
+        for (int i = 0; i < inv.getSize(); i++) {
+            if(i<=10){
+                inv.setItem(i, new ItemStack(Material.BLACK_STAINED_GLASS_PANE));
+            }
+            if(i>=16){
+                inv.setItem(i, new ItemStack(Material.BLACK_STAINED_GLASS_PANE));
+            }
+        }
+        inv.setItem(11, getItem("Jobs", Material.IRON_SHOVEL, "GREEN"));
+        inv.setItem(12, new ItemStack(Material.BLACK_STAINED_GLASS_PANE));
+        inv.setItem(13, getItem("Shop", Material.GOLD_INGOT, "GOLD"));
+        inv.setItem(14, new ItemStack(Material.BLACK_STAINED_GLASS_PANE));
+        inv.setItem(15, getItem("Belohnungen", Material.ENDER_CHEST, "BLUE"));
+        return inv;
+    }
+    public static ItemStack getItem(String name, Material material, String color){
+        ItemStack item=new ItemStack(material);
+        ItemMeta itemMeta=item.getItemMeta();
+        itemMeta.setDisplayName(ChatColor.valueOf(color)+name);
+        item.setItemMeta(itemMeta);
+        return item;
     }
     public static Inventory getJobsInv(Player player, Plugin plugin){
         JobsDBManager jobsDbManager =new JobsDBManager();
@@ -181,15 +207,11 @@ public class JobsCommand implements CommandExecutor {
     }
     public static Inventory buildFrame(Inventory inv){
         Material material=Material.GRAY_STAINED_GLASS_PANE;
-        inv.setItem(0, new ItemStack(material));
-        inv.setItem(1, new ItemStack(material));
-        inv.setItem(2, new ItemStack(material));
-        inv.setItem(3, new ItemStack(material));
-        inv.setItem(4, new ItemStack(material));
-        inv.setItem(5, new ItemStack(material));
-        inv.setItem(6, new ItemStack(material));
-        inv.setItem(7, new ItemStack(material));
-        inv.setItem(8, new ItemStack(material));
+        for (int i = 0; i < inv.getSize(); i++) {
+            if(i<=9){
+                inv.setItem(i, new ItemStack(material));
+            }
+        }
         return inv;
     }
 

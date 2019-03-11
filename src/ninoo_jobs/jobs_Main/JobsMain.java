@@ -15,6 +15,7 @@ import ninoo_jobs.jobs_helpclasses.helpfulObjects.JobsRItem;
 import ninoo_jobs.jobs_helpclasses.sectionControllers.*;
 import ninoo_jobs.jobs_listeners.guis.JobsGuiBountyListener;
 import ninoo_jobs.jobs_listeners.guis.JobsGuiListener;
+import ninoo_jobs.jobs_listeners.guis.JobsMainGuiListener;
 import ninoo_jobs.jobs_listeners.protectionListener.JobsProtection;
 import ninoo_jobs.jobs_listeners.triggerListener.JobsBlockBreaker;
 import ninoo_jobs.jobs_listeners.triggerListener.JobsFishListener;
@@ -106,6 +107,9 @@ public class JobsMain extends JavaPlugin {
 
         JobsProtection jobsProtection=new JobsProtection(plugin);
         this.getServer().getPluginManager().registerEvents(jobsProtection, this);
+
+        JobsMainGuiListener jobsMainGuiListener=new JobsMainGuiListener(plugin);
+        this.getServer().getPluginManager().registerEvents(jobsMainGuiListener, this);
 
 
         BukkitRunnable run=new BukkitRunnable() {
