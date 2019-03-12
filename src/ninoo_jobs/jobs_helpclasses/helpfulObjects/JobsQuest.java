@@ -14,6 +14,5 @@ public class JobsQuest {
         this.list = list;
         this.neededQuests = neededQuests;
     }
-
 }
 
