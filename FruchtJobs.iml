@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="CMIAPI7.6.2.0" level="project" />
+    <orderEntry type="library" name="CoreProtect-2.16.1" level="project" />
   </component>
 </module>

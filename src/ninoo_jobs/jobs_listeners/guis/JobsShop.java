@@ -48,6 +48,9 @@ public class JobsShop implements Listener {
                                     }
                                     break;
                                 }
+                                //if(){
+
+                                //}
                             }
                         }
                     }

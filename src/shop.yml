@@ -2,5 +2,5 @@ Shop:
   1:
     entity: "job"
     jobname: "Holzfäller"
-    guiicon: oak_log
-    price: 100
+    quest: "unlock"
+    price: 0

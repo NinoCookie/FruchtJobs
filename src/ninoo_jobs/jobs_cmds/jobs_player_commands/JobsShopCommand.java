@@ -1,5 +1,6 @@
 package ninoo_jobs.jobs_cmds.jobs_player_commands;
 
+import ninoo_jobs.jobs_Main.JobsMain;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -13,7 +14,11 @@ public class JobsShopCommand {
     }
     public static Inventory createInv(Player player, int am){
         Inventory inventory = Bukkit.createInventory(player, am, "JobsShop");
+        for (int i = 0; i < JobsMain.shopsList.size(); i++) {
+            if(JobsMain.shopsList.get(i).Entity.equalsIgnoreCase("job")){
 
+            }
+        }
         return inventory;
     }
 }

@@ -7,12 +7,14 @@ import java.util.Map;
 
 public class JobsShop {
     public String Entity;
-    public double Chance;
+    public String quest;
+    public double price;
     public String Jobname;
 
     public JobsShop(ConfigurationSection section){
         Entity = section.getString("entity");
-        Chance  = section.getDouble("chance");
         Jobname =section.getString("jobname");
+        price   =section.getDouble("price");
+        quest   =section.getString("quest");
     }
 }
