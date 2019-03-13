@@ -32,16 +32,18 @@ public class JobsRItem {
             Material m=Material.matchMaterial(MaterialN);
             if(m!=null){
                 ItemStack item=new ItemStack(m, Amount);
-                ItemMeta md=item.getItemMeta();
-                md.setDisplayName(Name);
-                md.setLore(Lore);
-                item.setItemMeta(md);
-                for (int i = 0; i < Enchants.size(); i++) {
-                    String[] splitted=Enchants.get(i).split("-");
-                    Enchantment en=Enchantment.getByName(splitted[0]);
-                    if(en!=null && item.getType()!=null){
-                        if(en.canEnchantItem(item)){
-                            item.addEnchantment(en, Integer.parseInt(splitted[1]));
+                if(!(Name.equalsIgnoreCase("")||Lore!=null||Enchants!=null)){
+                    ItemMeta md=item.getItemMeta();
+                    md.setDisplayName(Name);
+                    md.setLore(Lore);
+                    item.setItemMeta(md);
+                    for (int i = 0; i < Enchants.size(); i++) {
+                        String[] splitted=Enchants.get(i).split("-");
+                        Enchantment en=Enchantment.getByName(splitted[0]);
+                        if(en!=null && item.getType()!=null){
+                            if(en.canEnchantItem(item)){
+                                item.addEnchantment(en, Integer.parseInt(splitted[1]));
+                            }
                         }
                     }
                 }

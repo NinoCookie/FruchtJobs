@@ -3,19 +3,16 @@ package ninoo_jobs.jobs_Main;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 import ninoo_jobs.jobs_Main.fileHandler.JobsCFG;
-import ninoo_jobs.jobs_cmds.jobs_admin_commands.JobsGiveAdminCommand;
-import ninoo_jobs.jobs_cmds.jobs_admin_commands.JobsPermissionCommand;
-import ninoo_jobs.jobs_cmds.jobs_admin_commands.JobsReloadCommand;
-import ninoo_jobs.jobs_cmds.jobs_admin_commands.JobsRemoveAdminCommand;
 import ninoo_jobs.jobs_cmds.jobs_bounty_commands.JobsBountyCommand;
 import ninoo_jobs.jobs_cmds.JobsCommand;
-import ninoo_jobs.jobs_cmds.jobs_player_commands.*;
 import ninoo_jobs.jobs_db.JobsDBManager;
+import ninoo_jobs.jobs_helpclasses.sectionControllers.JobsQuest;
 import ninoo_jobs.jobs_helpclasses.helpfulObjects.JobsRItem;
 import ninoo_jobs.jobs_helpclasses.sectionControllers.*;
 import ninoo_jobs.jobs_listeners.guis.JobsGuiBountyListener;
 import ninoo_jobs.jobs_listeners.guis.JobsGuiListener;
 import ninoo_jobs.jobs_listeners.guis.JobsMainGuiListener;
+import ninoo_jobs.jobs_listeners.guis.JobsQuestListener;
 import ninoo_jobs.jobs_listeners.protectionListener.JobsProtection;
 import ninoo_jobs.jobs_listeners.triggerListener.JobsBlockBreaker;
 import ninoo_jobs.jobs_listeners.triggerListener.JobsFishListener;
@@ -40,11 +37,13 @@ public class JobsMain extends JavaPlugin {
     public static List<JobsBounty> bountylist;
     public static List<JobsTreasureItems> treasureItemList;
     public static List<JobsShop> shopsList;
+    public static List<JobsQuest> jobsQuestsList;
 
     private static JobsCFG jobsCfg_jobs;
     private static JobsCFG jobsCfg_bounty;
     private static JobsCFG jobsCfg_treasureItems;
     private static JobsCFG jobsCFG_shop;
+    private static JobsCFG jobsCFG_quests;
 
     public static Economy economy;
     public static Permission permission = null;
@@ -56,10 +55,12 @@ public class JobsMain extends JavaPlugin {
         jobsCfg_bounty = new JobsCFG(this, "bounty");
         jobsCfg_treasureItems = new JobsCFG(this, "treasureItems");
         jobsCFG_shop=new JobsCFG(this, "shop");
+        jobsCFG_quests=new JobsCFG(this, "jquests");
         this.jobsCfg_jobs.setup(true);
         this.jobsCfg_bounty.setup(true);
         this.jobsCfg_treasureItems.setup(true);
         this.jobsCFG_shop.setup(true);
+        this.jobsCFG_quests.setup(true);
 
         createconfig();
         if(!setupEconomy()){
@@ -111,6 +112,8 @@ public class JobsMain extends JavaPlugin {
         JobsMainGuiListener jobsMainGuiListener=new JobsMainGuiListener(plugin);
         this.getServer().getPluginManager().registerEvents(jobsMainGuiListener, this);
 
+        JobsQuestListener jobsQuestListener=new JobsQuestListener(plugin);
+        this.getServer().getPluginManager().registerEvents(jobsQuestListener, this);
 
         BukkitRunnable run=new BukkitRunnable() {
             @Override
@@ -140,14 +143,18 @@ public class JobsMain extends JavaPlugin {
         jobsCfg_bounty = new JobsCFG(plugin, "bounty");
         jobsCfg_treasureItems = new JobsCFG(plugin, "treasureItems");
         jobsCFG_shop=new JobsCFG(plugin, "shop");
+        jobsCFG_quests=new JobsCFG(plugin, "jquests");
         jobsCfg_jobs.setup(true);
         jobsCfg_bounty.setup(true);
         jobsCfg_treasureItems.setup(true);
         jobsCFG_shop.setup(true);
+        jobsCFG_quests.setup(true);
         jobslist=new ArrayList<JobsJob>();
         bountylist=new ArrayList<JobsBounty>();
         treasureItemList=new ArrayList<JobsTreasureItems>();
         shopsList=new ArrayList<JobsShop>();
+        jobsQuestsList=new ArrayList<JobsQuest>();
+
         ConfigurationSection section= getJobsCfg_jobs().getFile().getConfigurationSection("Jobs");
         for(String key : section.getKeys(false)){
             jobslist.add(new JobsJob(section.getConfigurationSection(key)));
@@ -164,6 +171,11 @@ public class JobsMain extends JavaPlugin {
         for (String key:section.getKeys(false)){
             shopsList.add(new JobsShop(section.getConfigurationSection(key)));
         }
+        section=getJobsCFG_quests().getFile().getConfigurationSection("JQuests");
+        for (String key:section.getKeys(false)) {
+            jobsQuestsList.add(new JobsQuest(section.getConfigurationSection(key)));
+        }
+
 
     }
 
@@ -283,5 +295,8 @@ public class JobsMain extends JavaPlugin {
     }
     public static JobsCFG getJobsCFG_shop(){
         return jobsCFG_shop;
+    }
+    public static JobsCFG getJobsCFG_quests() {
+        return jobsCFG_quests;
     }
 }

@@ -2,8 +2,10 @@ package ninoo_jobs.jobs_listeners.guis;
 
 import ninoo_jobs.jobs_cmds.JobsCommand;
 import ninoo_jobs.jobs_cmds.jobs_bounty_commands.JobsBountyCommand;
+import ninoo_jobs.jobs_cmds.jobs_player_commands.JobsQuestCommand;
 import ninoo_jobs.jobs_cmds.jobs_player_commands.JobsShopCommand;
 import ninoo_jobs.jobs_helpclasses.sectionControllers.JobsBounty;
+import ninoo_jobs.jobs_helpclasses.sectionControllers.JobsQuest;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -38,6 +40,10 @@ public class JobsMainGuiListener implements Listener {
                     }
                     if(event.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.GOLD+"Shop")){
                         event.getWhoClicked().openInventory(JobsShopCommand.createInv((Player) event.getWhoClicked(), 27));
+                    }
+                    //to do the command and implement this!!
+                    if(event.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_GREEN+"Quests")){
+                        event.getWhoClicked().openInventory(JobsQuestCommand.questInv((Player) event.getWhoClicked(), plugin));
                     }
                 }
             }

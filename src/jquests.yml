@@ -1,0 +1,9 @@
+JQuests:
+  unlock1:
+    questname: "freischalten Holzfäller"
+    jobname: "Holzfäller"
+    type: "unlock"
+    beforequests:
+      - ""
+    materiallist:
+      - "oak_log:64"
