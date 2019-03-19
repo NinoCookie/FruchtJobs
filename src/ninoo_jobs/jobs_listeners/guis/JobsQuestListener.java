@@ -1,5 +1,6 @@
 package ninoo_jobs.jobs_listeners.guis;
 
+import ninoo_jobs.jobs_Main.JobsMain;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
@@ -22,11 +23,12 @@ public class JobsQuestListener implements Listener {
                 if (event.getClick().isShiftClick()) {
                     return;
                 }
-                if (event.getCurrentItem().equals(new ItemStack(Material.GREEN_WALL_BANNER))) {
-                    return;
-                }
                 if (event.getClickedInventory().getTitle().equalsIgnoreCase("Quests")) {
+                    for (int i = 0; i < JobsMain.jobsQuestsList.size(); i++) {
+                        if(JobsMain.jobsQuestsList.get(i).type.equalsIgnoreCase("unlock")){
 
+                        }
+                    }
                 }
             }
         }catch (Exception e){

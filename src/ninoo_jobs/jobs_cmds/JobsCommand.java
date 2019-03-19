@@ -119,6 +119,13 @@ public class JobsCommand implements CommandExecutor {
     public static Inventory getMainJobsInv(Player player, Plugin plugin){
         Inventory inv=Bukkit.getServer().createInventory(player, 27, "FruchtJobs");
         for (int i = 0; i < inv.getSize(); i++) {
+            if(i==1){
+                ItemStack itemStack=new ItemStack(Material.RED_STAINED_GLASS_PANE);
+                ItemMeta itemMeta=itemStack.getItemMeta();
+                itemMeta.setDisplayName("Zurück");
+                itemStack.setItemMeta(itemMeta);
+                inv.setItem(i, itemStack);
+            }
             if(i<=19){
                 inv.setItem(i, new ItemStack(Material.BLACK_STAINED_GLASS_PANE));
             }
@@ -132,7 +139,7 @@ public class JobsCommand implements CommandExecutor {
         inv.setItem(13, new ItemStack(Material.BLACK_STAINED_GLASS_PANE));
         inv.setItem(14, getItem("Belohnungen", Material.ENDER_CHEST, "BLUE"));
         inv.setItem(15, new ItemStack(Material.BLACK_STAINED_GLASS_PANE));
-        inv.setItem(16, getItem("Quests", Material.GREEN_BANNER, "GREEN"));
+        inv.setItem(16, getItem("Quests", Material.GREEN_BANNER, ChatColor.DARK_GREEN.name()));
         return inv;
     }
     public static ItemStack getItem(String name, Material material, String color){

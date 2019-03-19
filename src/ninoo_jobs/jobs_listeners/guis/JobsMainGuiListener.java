@@ -26,11 +26,11 @@ public class JobsMainGuiListener implements Listener {
     @EventHandler
     public void onClick(InventoryClickEvent event){
         try {
-            if(event.getCurrentItem().equals(new ItemStack(Material.BLACK_STAINED_GLASS_PANE))){
-                event.setCancelled(true);
-                return;
-            }
             if(event.getClickedInventory()!=null){
+                if(event.getCurrentItem().equals(new ItemStack(Material.BLACK_STAINED_GLASS_PANE))){
+                    event.setCancelled(true);
+                    return;
+                }
                 if(event.getClickedInventory().getTitle().equalsIgnoreCase("FruchtJobs")){
                     if(event.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.GREEN+"Jobs")){
                         event.getWhoClicked().openInventory(JobsCommand.getJobsInv((Player) event.getWhoClicked(), plugin));

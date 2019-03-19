@@ -74,6 +74,13 @@ public class JobsBountyCommand implements CommandExecutor {
         }
         Inventory bounty= Bukkit.getServer().createInventory(player, chestc, "Belohnungen");
         for (int i = 0; i < entries.size(); i++) {
+            if(i==1){
+                ItemStack itemStack=new ItemStack(Material.RED_STAINED_GLASS_PANE);
+                ItemMeta itemMeta=itemStack.getItemMeta();
+                itemMeta.setDisplayName("Zurück");
+                itemStack.setItemMeta(itemMeta);
+                bounty.setItem(i, itemStack);
+            }
             String[] ent=entries.get(i).split("-");
             if(ent.length>0){
                 ItemStack displayitem=null;
