@@ -1,12 +1,9 @@
 package ninoo_jobs.jobs_listeners.guis;
 
 import ninoo_jobs.jobs_Main.JobsMain;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 
 public class JobsQuestListener implements Listener {

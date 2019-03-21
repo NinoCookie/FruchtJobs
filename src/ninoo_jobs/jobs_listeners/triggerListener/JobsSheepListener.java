@@ -2,8 +2,6 @@ package ninoo_jobs.jobs_listeners.triggerListener;
 
 import ninoo_jobs.jobs_Main.JobsMain;
 import ninoo_jobs.jobs_db.JobsDBManager;
-import org.bukkit.Bukkit;
-import org.bukkit.DyeColor;
 import org.bukkit.entity.Sheep;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

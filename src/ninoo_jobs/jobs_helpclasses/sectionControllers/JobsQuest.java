@@ -1,13 +1,8 @@
 package ninoo_jobs.jobs_helpclasses.sectionControllers;
 
 import ninoo_jobs.jobs_helpclasses.helpfulObjects.JobsRItem;
-import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.Plugin;
 
 import java.util.ArrayList;
 import java.util.List;
