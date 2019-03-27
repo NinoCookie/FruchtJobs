@@ -14,6 +14,7 @@ public class JobsQuest {
     public String type;
     public List<String> beforeQuests;
     public List<ItemStack> f_materialList;
+    public String guiicon;
 
      public JobsQuest(ConfigurationSection section) {
         this.questname = section.getString("questname");
@@ -22,6 +23,7 @@ public class JobsQuest {
         this.type = section.getString("type");
         this.beforeQuests = section.getStringList("beforequests");
         constructMaterialList(materialList);
+        this.guiicon=section.getString("guiicon");
     }
 
     private void constructMaterialList(List<String> materialList){

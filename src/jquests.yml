@@ -2,6 +2,7 @@ JQuests:
   unlock1:
     questname: "freischalten Holzfäller"
     jobname: "Holzfäller"
+    guiicon: "oak_log"
     type: "unlock"
     beforequests:
       - ""
